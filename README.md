@@ -1,5 +1,5 @@
 # MobHeadDisguises
-Bukkit plugin that makes mobs not attack players wearing mob heads
+Paper plugin that makes mobs not attack players wearing mob heads. Note that, because Spigot lacks important APIs used by this plugin, **this plugin does not run on Spigot** and you will need to use Paper or a fork of Paper instead.
 
 ## Configuration
 The `config.yml` file contains every option provided by this plugin. These settings can also be set via an in-game command (see below). Descriptions of each option are shown:
@@ -18,7 +18,7 @@ This command reloads the configuration from the disk, allowing you to change set
 
 ### /disguises set
 This command allows you to set options in the config file in-game. The format is as follows:
-`/disguises set <config-name> <value (true or false>`
+`/disguises set <config-name> <value (true or false)>`
 
 ## I'm wearing an x head and have x-are-dumb set to true, but they still attack me. Why is this?
-This plugin does not entirely prevent mobs from attacking you. For example, if you attack a zombie, it will still retaliate, and nearby zombies will as well. This is applicable to real mobs as well: if a skeleton shoots another skeleton, the second one will shoot back, so why should that not be the case if a player wearing a skeleton skull shoots a skeleton?
+This plugin does not entirely prevent mobs from attacking you. For example, if you attack a zombie, even while wearing a zombie head, it will still retaliate, and nearby zombies will as well. This is applicable to real mobs as well: if a skeleton shoots another skeleton, the second one will shoot back, so why should that not be the case if a player wearing a skeleton skull shoots a skeleton?
