@@ -1,0 +1,11 @@
+magic-disguises: false
+zombies-are-dumb: true
+skeletons-are-dumb: true
+wither-skeletons-are-dumb: false
+creepers-are-dumb: true
+commands:
+  disguises:
+    permission: disguises.control
+    usage: "Usage:
+    /disguises reload
+    /disguises set [magic-disguises | zombies-are-dumb | skeletons-are-dumb | wither-skeletons-are-dumb | creepers-are-dumb] [true | false]"
