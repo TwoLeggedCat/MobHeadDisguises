@@ -1,4 +1,10 @@
 name: MobHeadDisguises
 version: 1.0
 api-version: 1.16
-main: me.twoleggedcat.mobheaddisguise.Main
+main: me.twoleggedcat.mobheaddisguises.Main
+commands:
+  disguises:
+    permission: disguises.control
+    usage: "Usage:
+    /disguises reload
+    /disguises set [magic-disguises | zombies-are-dumb | skeletons-are-dumb | wither-skeletons-are-dumb | creepers-are-dumb] [true | false]"

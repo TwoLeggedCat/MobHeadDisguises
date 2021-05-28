@@ -1,7 +1,6 @@
 package me.twoleggedcat.mobheaddisguises;
 
 import net.kyori.adventure.text.Component;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -15,8 +14,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+import static org.bukkit.event.entity.EntityTargetEvent.TargetReason.*;
+
 public class Main extends JavaPlugin implements Listener {
-    // Store config values as variables; not necessary, but no real reason to use getConfig every time
+    // Store config values as variables; not necessary, but no real reason to use getBoolean every time
     public boolean magicDisguises;
     public boolean zombiesAreDumb;
     public boolean skeletonsAreDumb;
@@ -55,6 +56,8 @@ public class Main extends JavaPlugin implements Listener {
                 else
                     return false;
                 this.getConfig().set(args[1], toSet);
+                this.saveConfig();
+                this.reloadConfig();
                 sender.sendMessage(Component.text("Set " + args[1] + " to " + args[2]));
             }
         }
@@ -63,6 +66,9 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onTarget(EntityTargetEvent e) {
+        // We only want to prevent targeting out of the blue, not due to retaliation, etc
+        if (!(e.getReason() == CLOSEST_PLAYER || e.getReason() == CLOSEST_ENTITY || e.getReason() == RANDOM_TARGET))
+            return;
         if (e.getTarget() instanceof Player player) {
             EntityType type = e.getEntityType();
             ItemStack helmet = player.getInventory().getHelmet();
