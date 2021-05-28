@@ -21,4 +21,4 @@ This command allows you to set options in the config file in-game. The format is
 `/disguises set <config-name> <value (true or false>`
 
 ## I'm wearing an x head and have x-are-dumb set to true, but they still attack me. Why is this?
-This plugin does not entirely prevent mobs from attacking you. For example, if you attack a zombie, it will still retaliate, and nearby zombies will as well. This is applicable to real mobs as well: if a skeleton shoots another skeleton, the second one will shoot back, so why should that not be the case if a player wearing a skeleton skull shoots a skeleton?
+This plugin does not entirely prevent mobs from attacking you. For example, if you attack a zombie, even while wearing a zombie head, it will still retaliate, and nearby zombies will as well. This is applicable to real mobs as well: if a skeleton shoots another skeleton, the second one will shoot back, so why should that not be the case if a player wearing a skeleton skull shoots a skeleton?
