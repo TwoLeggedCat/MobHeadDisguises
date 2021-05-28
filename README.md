@@ -11,7 +11,7 @@ This sets whether or not a "disguise" (aka head) should work on all mobs this pl
 These settings specificy whether or not mobs of type "x" are dumb in that they do not attack players wearing their type of head. This setting is ignored if `magic-disguises` is set to `true`.
 
 ## The plugin command
-This plugin has one simple root command, `/disguises`. The subcommands are listed below.
+This plugin has one simple root command, `/disguises`. This command can only be run by those with the `disguises.control` permission. The subcommands are listed below.
 
 ### /disguises reload
 This command reloads the configuration from the disk, allowing you to change settings without restarting the server.

@@ -1,6 +1,7 @@
 package me.twoleggedcat.mobheaddisguises;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -39,8 +40,12 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        if (!sender.hasPermission("disguises.control")) {
+            sender.sendMessage(Component.text("You do not have permission to use this command.").color(TextColor.color(255, 0, 0)));
+        }
         if (args.length < 1) return false;
-        if (args[0].equalsIgnoreCase("reload")) this.reloadConfig();
+        if (args[0].equalsIgnoreCase("reload"))
+            this.reloadConfig();
         else if (args[0].equalsIgnoreCase("set")) {
             if (args.length < 3) return false;
             if (args[1].equals("magic-disguises")
